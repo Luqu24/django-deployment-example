@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>USING MODELS</title>
+    <link rel="stylesheet" href="{% static "/css/style.css" %}">
+  </head>
+  <body>
+    <h1>THIS IS MY FACE YOU PIECE OF SHIT</h1>
+    <img src="{% static 'images/myface.jpg'%}" alt="ERROOOORRR">
+    <h1>Here are your access records</h1>
+
+    <div class="django-div">
+      {% if access_records %}
+        <table>
+          <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+          </thead>
+          {% for acc in access_records %}
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+         <h1>NO ACCESS RECORDS </h1>
+        {% endif %}
+    </div>
+  </body>
+</html>

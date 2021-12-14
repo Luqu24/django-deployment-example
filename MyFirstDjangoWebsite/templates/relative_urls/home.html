@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% extends "relative_urls/base.html" %}
+{% load my_extras %}
+  {% block body_block %}
+    <h1>THIS IS home</h1>
+    <h1>{{ text|cut:"a" }}</h1>
+    <h1>{{ numbers|add:1234 }}</h1>
+  {% endblock %}
